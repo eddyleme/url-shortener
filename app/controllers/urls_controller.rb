@@ -1,6 +1,6 @@
 class UrlsController < ApplicationController
 	before_action :set_url, only: :destroy
-	 before_action :find_url, only: :show
+	before_action :find_url, only: :show
 
   def index
   	@urls = Url.all
@@ -46,11 +46,11 @@ class UrlsController < ApplicationController
     end
 
     def find_url
-    	if params[:id].to_i == 0
-    		@url = Url.find_by(short: params[:id])
-    	else
-    		@url = Url.find_by(id: params[:id])
-    	end
+	    	if params[:id].to_i == 0
+	    		@url = Url.find_by(short: params[:id])
+	    	else
+	    		@url = Url.find_by(id: params[:id])
+	    	end
     end
   #   def generate(x)
 		# 	x.short = SecureRandom.hex(3)
